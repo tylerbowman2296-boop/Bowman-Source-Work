@@ -7,6 +7,8 @@
   location: "Anderson, SC",
   tagline: "Website design and care for local small businesses.",
   liveUrl: "https://bowmanssourcework.com",
+  reviewUrl: "https://g.page/r/CRVYr441KDtDEAI/review",
+  reviewQrPath: "/google-review-qr.png",
   logoPath: "/bowmans-source-work-logo.png",
   markPath: "/bowmans-source-work-mark.png",
 };

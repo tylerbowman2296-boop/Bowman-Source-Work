@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useMemo, useState, type FormEvent } from "react";
 import { Button } from "@/components/ui/Button";
 import { businessInfo, contactNeeds } from "@/lib/constants";
@@ -80,6 +81,46 @@ export default function Contact() {
               <p className="mt-1 text-lg font-semibold text-white">
                 {businessInfo.location}
               </p>
+            </div>
+          </div>
+
+          <div className="mt-6 rounded-3xl border border-cyan-300/20 bg-white p-5 text-slate-950 shadow-xl shadow-black/20">
+            <p className="text-sm font-black uppercase tracking-[0.16em] text-cyan-700">
+              Leave a review
+            </p>
+            <div className="mt-4 grid gap-5 sm:grid-cols-[8rem_1fr] sm:items-center lg:grid-cols-1 xl:grid-cols-[8rem_1fr]">
+              <a
+                href={businessInfo.reviewUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Leave a Google review for Bowman's Source Work"
+                className="mx-auto block rounded-2xl border border-slate-200 bg-white p-3 shadow-sm transition hover:border-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300 sm:mx-0"
+              >
+                <Image
+                  src={businessInfo.reviewQrPath}
+                  alt="QR code to leave a Google review for Bowman's Source Work"
+                  width={128}
+                  height={128}
+                  className="size-32"
+                />
+              </a>
+              <div>
+                <h3 className="text-xl font-black">
+                  Worked with Bowman&apos;s Source Work?
+                </h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600">
+                  Scan the QR code or tap the button to leave a quick Google
+                  review.
+                </p>
+                <a
+                  href={businessInfo.reviewUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 inline-flex min-h-11 w-full items-center justify-center rounded-full bg-slate-950 px-5 text-center text-sm font-semibold leading-tight text-white transition hover:bg-slate-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 sm:w-auto"
+                >
+                  Leave a Google Review
+                </a>
+              </div>
             </div>
           </div>
         </div>

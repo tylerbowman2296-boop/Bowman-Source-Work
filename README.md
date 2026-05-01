@@ -25,7 +25,7 @@ npm audit
 Most business content is in `lib/constants.ts`:
 
 - Business name, email, phone, location, and tagline
-- Services, website care checklist, process steps, pricing, demo projects, FAQs, and contact dropdown options
+- Services, website care checklist, process steps, pricing, demo projects, FAQs, Google review link, and contact dropdown options
 
 Main sections are in `components/`. The homepage layout is in `app/page.tsx`.
 
@@ -33,6 +33,7 @@ Main sections are in `components/`. The homepage layout is in `app/page.tsx`.
 
 - Full logo used in the header and footer: `public/bowmans-source-work-logo.png`
 - Brand mark used in preview visuals and icons: `public/bowmans-source-work-mark.png`
+- Google review QR code: `public/google-review-qr.png`
 - Founder photo: `public/tyler-bowman.jpeg`
 - Site icons: `app/icon.png` and `app/apple-icon.png`
 
