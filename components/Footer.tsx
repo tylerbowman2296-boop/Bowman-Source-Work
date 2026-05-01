@@ -1,16 +1,21 @@
 import { businessInfo, navItems } from "@/lib/constants";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Footer() {
   const year = new Date().getFullYear();
+  const footerLinks = navItems.map((item) => ({
+    ...item,
+    href: `/${item.href}`,
+  }));
 
   return (
     <footer className="border-t border-white/10 bg-slate-950 text-white">
       <div className="mx-auto max-w-7xl px-5 py-10 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-[1.1fr_0.9fr] md:items-start">
           <div>
-            <a
-              href="#top"
+            <Link
+              href="/"
               className="inline-flex rounded-2xl bg-white px-3 py-2 transition hover:bg-cyan-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
               aria-label={`${businessInfo.name} home`}
             >
@@ -21,7 +26,7 @@ export default function Footer() {
                 height={92}
                 className="h-11 w-auto object-contain"
               />
-            </a>
+            </Link>
             <p className="mt-4 max-w-md leading-7 text-slate-300">
               {businessInfo.tagline}
             </p>
@@ -48,7 +53,7 @@ export default function Footer() {
             className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:justify-items-end"
             aria-label="Footer navigation"
           >
-            {navItems.map((item) => (
+            {footerLinks.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -64,7 +69,15 @@ export default function Footer() {
           <p>
             &copy; {year} {businessInfo.name}. All rights reserved.
           </p>
-          <p>Website design and care for local small businesses.</p>
+          <div className="flex flex-col gap-2 sm:items-end">
+            <a
+              href="/terms"
+              className="font-medium text-slate-300 underline decoration-cyan-300/40 underline-offset-4 transition hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+            >
+              Terms of Service
+            </a>
+            <p>Website design and care for local small businesses.</p>
+          </div>
         </div>
       </div>
     </footer>

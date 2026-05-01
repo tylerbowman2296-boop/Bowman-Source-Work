@@ -1,12 +1,16 @@
 ﻿"use client";
 
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { businessInfo, navItems } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+  const getHomeHref = (href: string) => (isHomePage ? href : `/${href}`);
 
   return (
     <header className="sticky top-0 z-50 border-b border-white/10 bg-slate-950/90 text-white backdrop-blur">
@@ -15,7 +19,7 @@ export default function Header() {
         aria-label="Main navigation"
       >
         <a
-          href="#top"
+          href={isHomePage ? "#top" : "/"}
           className="group flex min-w-0 max-w-[calc(100%-4rem)] items-center rounded-2xl bg-white px-2.5 py-2 shadow-lg shadow-black/15 transition hover:bg-cyan-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
           aria-label={`${businessInfo.name} home`}
         >
@@ -33,7 +37,7 @@ export default function Header() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={getHomeHref(item.href)}
               className="text-sm font-medium text-slate-200 transition hover:text-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
             >
               {item.label}
@@ -42,7 +46,7 @@ export default function Header() {
         </div>
 
         <div className="hidden lg:block">
-          <ButtonLink href="#contact" size="sm">
+          <ButtonLink href={getHomeHref("#contact")} size="sm">
             Free Website Review
           </ButtonLink>
         </div>
@@ -86,7 +90,7 @@ export default function Header() {
           {navItems.map((item) => (
             <a
               key={item.href}
-              href={item.href}
+              href={getHomeHref(item.href)}
               className="rounded-xl px-3 py-3 text-sm font-medium text-slate-100 transition hover:bg-white/10 hover:text-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
               onClick={() => setIsOpen(false)}
             >
@@ -94,7 +98,7 @@ export default function Header() {
             </a>
           ))}
           <ButtonLink
-            href="#contact"
+            href={getHomeHref("#contact")}
             className="mt-2 w-full"
             onClick={() => setIsOpen(false)}
           >
