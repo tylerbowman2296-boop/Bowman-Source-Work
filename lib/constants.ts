@@ -6,7 +6,7 @@
   phoneHref: "+18645561288",
   location: "Anderson, SC",
   tagline: "Website design and care for local small businesses.",
-  liveUrl: "https://bowmans-source-work.vercel.app",
+  liveUrl: "https://bowmanssourcework.com",
   logoPath: "/bowmans-source-work-logo.png",
   markPath: "/bowmans-source-work-mark.png",
 };

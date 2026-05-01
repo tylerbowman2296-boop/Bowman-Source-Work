@@ -51,4 +51,4 @@ To use a real form service later, connect the submit handler to Formspree, a Res
 5. Use the default build command: `npm run build`.
 6. Deploy.
 
-The production metadata is currently set in `app/layout.tsx` as `https://bowmans-source-work.vercel.app`. Update `metadataBase`, Open Graph URLs, and any domain text after the custom domain is connected to this project.
+The production metadata is currently set in `app/layout.tsx` as `https://bowmanssourcework.com`. If the domain changes later, update `metadataBase`, Open Graph URLs, and `liveUrl` in `lib/constants.ts`.

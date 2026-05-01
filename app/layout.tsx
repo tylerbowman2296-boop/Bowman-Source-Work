@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 const title = "Bowman's Source Work | Website Design & Care in Anderson, SC";
 const description =
   "Bowman's Source Work helps Anderson-area small businesses build clean, mobile-friendly websites and keep them updated with reliable website care.";
-const siteUrl = "https://bowmans-source-work.vercel.app";
+const siteUrl = "https://bowmanssourcework.com";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
