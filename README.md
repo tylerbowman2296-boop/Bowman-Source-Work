@@ -42,6 +42,10 @@ The form in `components/Contact.tsx` currently opens a prepared email to `contac
 
 To use a real form service later, connect the submit handler to Formspree, a Resend-powered Next.js route handler, or another Vercel-compatible form handler.
 
+## Analytics
+
+Vercel Web Analytics is enabled with `@vercel/analytics` in `app/layout.tsx`. After deployment, page views appear in the Vercel project dashboard under Analytics.
+
 ## Deploy To Vercel
 
 1. Push this project to GitHub.
