@@ -16,20 +16,17 @@ export default function Header() {
       >
         <a
           href="#top"
-          className="group flex min-w-0 max-w-[calc(100%-4rem)] items-center gap-3 rounded-2xl bg-white px-2.5 py-1.5 pr-4 shadow-lg shadow-black/15 transition hover:bg-cyan-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
+          className="group flex min-w-0 max-w-[calc(100%-4rem)] items-center rounded-2xl bg-white px-2.5 py-2 shadow-lg shadow-black/15 transition hover:bg-cyan-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cyan-300"
           aria-label={`${businessInfo.name} home`}
         >
           <Image
-            src={businessInfo.markPath}
+            src={businessInfo.logoPath}
             alt=""
-            width={94}
-            height={78}
+            width={260}
+            height={92}
             priority
-            className="h-9 w-auto object-contain sm:h-10"
+            className="h-8 w-auto max-w-[11.25rem] object-contain sm:h-9 sm:max-w-[14rem]"
           />
-          <span className="max-w-[8.5rem] truncate text-sm font-black tracking-tight text-slate-950 sm:max-w-none sm:text-base">
-            Bowman&apos;s Source Work
-          </span>
         </a>
 
         <div className="hidden items-center gap-7 lg:flex">
@@ -52,7 +49,7 @@ export default function Header() {
 
         <button
           type="button"
-          className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-white/15 text-white transition hover:border-cyan-300/70 hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 lg:hidden"
+          className="inline-flex size-11 shrink-0 items-center justify-center rounded-xl border border-white bg-white text-slate-950 shadow-lg shadow-black/15 transition hover:bg-cyan-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 lg:hidden"
           aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
           aria-expanded={isOpen}
           aria-controls="mobile-navigation"

@@ -1,5 +1,5 @@
-import { pricingPlans } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
+import { pricingPlans } from "@/lib/constants";
 
 export default function Pricing() {
   return (
@@ -17,12 +17,12 @@ export default function Pricing() {
             id="pricing-title"
             className="mt-3 text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"
           >
-            Clear starter pricing for local small businesses.
+            Starter pricing that is easy to compare.
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-600">
-            These are starter estimates so you can see what might fit before a
-            sales conversation. Final pricing depends on page count, features,
-            content needs, and update frequency.
+            These are honest starting estimates for local small businesses. You
+            will know the scope before work begins, and the free review helps
+            narrow down what you actually need.
           </p>
         </div>
 
@@ -33,45 +33,61 @@ export default function Pricing() {
               className={`relative flex h-full flex-col rounded-2xl border p-6 shadow-sm ${
                 plan.featured
                   ? "border-cyan-300 bg-slate-950 text-white shadow-xl shadow-slate-950/20"
-                  : "border-slate-200 bg-slate-50 text-slate-950"
+                  : "border-slate-200 bg-white text-slate-950"
               }`}
             >
-              <div className="flex items-start justify-between gap-4">
-                <h3 className="text-2xl font-black">{plan.name}</h3>
-                {plan.featured ? (
-                  <span className="shrink-0 rounded-full bg-cyan-300 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-slate-950">
-                    Most Popular
-                  </span>
-                ) : null}
-              </div>
+              {plan.featured ? (
+                <span className="mb-5 w-fit rounded-full bg-cyan-300 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-slate-950">
+                  Most Popular
+                </span>
+              ) : (
+                <span className="mb-5 w-fit rounded-full bg-slate-100 px-3 py-1 text-xs font-black uppercase tracking-[0.14em] text-slate-600">
+                  Starter estimate
+                </span>
+              )}
+
+              <h3 className="text-2xl font-black">{plan.name}</h3>
               <p
-                className={`mt-3 text-sm font-semibold ${
-                  plan.featured ? "text-cyan-200" : "text-cyan-800"
+                className={`mt-3 min-h-16 text-sm font-semibold leading-6 ${
+                  plan.featured ? "text-cyan-100" : "text-slate-600"
                 }`}
               >
-                Best for: {plan.bestFor}
+                {plan.bestFor}
               </p>
               <p className="mt-6 text-4xl font-black tracking-tight">
                 {plan.price}
               </p>
 
-              <ul
-                className={`mt-7 flex-1 space-y-3 text-sm font-medium ${
-                  plan.featured ? "text-slate-200" : "text-slate-700"
+              <div
+                className={`mt-7 flex-1 border-t pt-6 ${
+                  plan.featured ? "border-white/10" : "border-slate-200"
                 }`}
               >
-                {plan.includes.map((item) => (
-                  <li key={item} className="flex gap-3">
-                    <span
-                      className={plan.featured ? "text-cyan-300" : "text-cyan-700"}
-                      aria-hidden="true"
-                    >
-                      ✓
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+                <p
+                  className={`text-sm font-black uppercase tracking-[0.14em] ${
+                    plan.featured ? "text-cyan-200" : "text-cyan-800"
+                  }`}
+                >
+                  Includes
+                </p>
+                <ul
+                  className={`mt-4 flex-1 space-y-3 text-sm font-medium ${
+                    plan.featured ? "text-slate-200" : "text-slate-700"
+                  }`}
+                >
+                  {plan.includes.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span
+                        className={`mt-2 size-2 shrink-0 rounded-full ${
+                          plan.featured ? "bg-cyan-300" : "bg-cyan-700"
+                        }`}
+                        aria-hidden="true"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
 
               <ButtonLink
                 href="#contact"
@@ -84,10 +100,16 @@ export default function Pricing() {
           ))}
         </div>
 
-        <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-6 text-slate-500">
-          Final pricing depends on page count, features, content needs, and
-          update frequency. The free review is a no-pressure first step.
-        </p>
+        <div className="mx-auto mt-8 max-w-4xl rounded-3xl border border-slate-200 bg-slate-50 p-5 text-center sm:p-6">
+          <p className="text-sm leading-6 text-slate-600">
+            Final pricing depends on page count, features, content needs, and
+            update frequency. No pressure, no confusing quote process, and no
+            fake package promises.
+          </p>
+          <ButtonLink href="#contact" className="mt-5 w-full sm:w-auto">
+            Compare Options With Me
+          </ButtonLink>
+        </div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
-﻿import { serviceAreas, trustCards } from "@/lib/constants";
+import { ButtonLink } from "@/components/ui/Button";
+import { serviceAreas, trustCards } from "@/lib/constants";
 
 export default function TrustSection() {
   return (
@@ -11,7 +12,7 @@ export default function TrustSection() {
             </p>
             <h2
               id="trust-title"
-              className="mt-3 max-w-3xl text-balance text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"
+              className="mt-3 max-w-3xl text-pretty text-3xl font-black tracking-tight text-slate-950 sm:text-4xl"
             >
               Built locally in Anderson, SC for small businesses that need a
               website people can trust.
@@ -47,10 +48,10 @@ export default function TrustSection() {
               className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm"
             >
               <div
-                className="mb-5 flex size-11 items-center justify-center rounded-xl bg-cyan-100 text-lg font-black text-cyan-800"
+                className="mb-5 flex size-11 items-center justify-center rounded-xl bg-cyan-100 text-xs font-black tracking-tight text-cyan-800"
                 aria-hidden="true"
               >
-                ✓
+                BSW
               </div>
               <h3 className="text-xl font-black text-slate-950">
                 {card.title}
@@ -58,6 +59,21 @@ export default function TrustSection() {
               <p className="mt-3 leading-7 text-slate-600">{card.text}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-3xl bg-slate-950 p-5 text-white shadow-xl shadow-slate-950/15 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+          <div>
+            <p className="text-lg font-black">
+              Want a local set of eyes on your website?
+            </p>
+            <p className="mt-2 leading-7 text-slate-300">
+              I can review what you have now and explain the next best step in
+              plain language.
+            </p>
+          </div>
+          <ButtonLink href="#contact" className="mt-5 w-full sm:mt-0 sm:w-auto">
+            Request a Free Review
+          </ButtonLink>
         </div>
       </div>
     </section>

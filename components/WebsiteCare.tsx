@@ -48,11 +48,9 @@ export default function WebsiteCare() {
                   className="flex items-start gap-3 rounded-xl bg-slate-50 p-4 text-sm font-semibold text-slate-700"
                 >
                   <span
-                    className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs text-emerald-700"
+                    className="mt-1.5 size-2 shrink-0 rounded-full bg-emerald-600"
                     aria-hidden="true"
-                  >
-                    ✓
-                  </span>
+                  />
                   <span>{item}</span>
                 </li>
               ))}

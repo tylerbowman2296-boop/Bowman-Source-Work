@@ -1,11 +1,12 @@
 ﻿export const businessInfo = {
   name: "Bowman's Source Work",
   founder: "Tyler Bowman",
-  email: "tylerdrake@bowmansourcework.com",
+  email: "contact@bowmansourcework.com",
   phone: "(864) 556-1288",
   phoneHref: "+18645561288",
   location: "Anderson, SC",
-  tagline: "Clean websites and dependable care for local small businesses.",
+  tagline: "Website design and care for local small businesses.",
+  liveUrl: "https://bowmans-source-work.vercel.app",
   logoPath: "/bowmans-source-work-logo.png",
   markPath: "/bowmans-source-work-mark.png",
 };
@@ -20,16 +21,16 @@ export const navItems = [
 ];
 
 export const heroPoints = [
-  "Mobile-friendly websites",
-  "Clear calls to action",
-  "Local Anderson support",
-  "Starter pricing available",
+  "Professional first impression",
+  "Clear calls, texts, and quote paths",
+  "Mobile-friendly from day one",
+  "Ongoing update help available",
 ];
 
 export const trustCards = [
   {
     title: "Local & Easy to Reach",
-    text: "You are working with someone from Anderson who understands local small businesses and values clear communication.",
+    text: "You are working with someone from Anderson who values clear communication, honest expectations, and useful work.",
   },
   {
     title: "Mobile-First Design",
@@ -37,7 +38,7 @@ export const trustCards = [
   },
   {
     title: "Straightforward Website Care",
-    text: "Need updates, fixes, or small changes later? You will know who to contact and what the next step is.",
+    text: "Need updates, fixes, or small changes later? You will know who to contact and what the next step looks like.",
   },
 ];
 
@@ -122,16 +123,25 @@ export const processSteps = [
 export const demoProjects = [
   {
     type: "Pressure Washing Business Demo",
+    previewTitle: "Upstate Pressure Pros",
+    previewMeta: "Quotes, service areas, before-and-after proof",
+    previewSections: ["Services", "Photos", "Reviews", "Quote"],
     description:
       "A clean, lead-focused layout for a local service business that needs more calls and quote requests.",
   },
   {
     type: "Barber Shop Demo",
+    previewTitle: "Main Street Barber",
+    previewMeta: "Hours, location, services, and booking CTA",
+    previewSections: ["Cuts", "Hours", "Map", "Book"],
     description:
       "A sharp mobile-friendly site concept with services, hours, location, and booking call-to-action.",
   },
   {
     type: "Food Truck Demo",
+    previewTitle: "Anderson Street Eats",
+    previewMeta: "Menu highlights, weekly stops, and location updates",
+    previewSections: ["Menu", "Schedule", "Find Us", "Contact"],
     description:
       "A simple energetic website concept with menu highlights, schedule, location updates, and contact info.",
   },
@@ -141,7 +151,7 @@ export const pricingPlans = [
   {
     name: "Starter Website",
     price: "Starting at $350",
-    bestFor: "New businesses or simple online presence",
+    bestFor: "New businesses that need a simple, professional online presence",
     cta: "Ask About Starter",
     featured: false,
     includes: [
@@ -155,7 +165,7 @@ export const pricingPlans = [
   {
     name: "Small Business Website",
     price: "Starting at $750",
-    bestFor: "Businesses that need more sections and stronger presentation",
+    bestFor: "Businesses that need more detail, stronger trust, and clearer calls to action",
     cta: "Ask About Business Site",
     featured: true,
     includes: [
@@ -170,7 +180,7 @@ export const pricingPlans = [
   {
     name: "Website Care Plan",
     price: "Starting at $75/month",
-    bestFor: "Business owners who want help after launch",
+    bestFor: "Business owners who want reliable update help after launch",
     cta: "Ask About Care",
     featured: false,
     includes: [

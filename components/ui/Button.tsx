@@ -4,7 +4,7 @@ type Variant = "primary" | "secondary" | "dark" | "outline";
 type Size = "sm" | "md" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center rounded-full font-semibold transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300";
+  "inline-flex items-center justify-center rounded-full text-center font-semibold leading-tight transition duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300";
 
 const variantClasses: Record<Variant, string> = {
   primary:

@@ -1,5 +1,5 @@
-import { services } from "@/lib/constants";
 import { ButtonLink } from "@/components/ui/Button";
+import { services } from "@/lib/constants";
 
 export default function Services() {
   return (
@@ -38,23 +38,38 @@ export default function Services() {
               <p className="mt-4 leading-7 text-slate-600">
                 {service.description}
               </p>
-              <ul className="mt-6 space-y-3 text-sm font-medium text-slate-700">
+              <ul className="mt-6 flex-1 space-y-3 text-sm font-medium text-slate-700">
                 {service.bullets.map((bullet) => (
                   <li key={bullet} className="flex gap-3">
-                    <span className="text-cyan-700" aria-hidden="true">
-                      ✓
-                    </span>
+                    <span
+                      className="mt-2 size-2 shrink-0 rounded-full bg-cyan-600"
+                      aria-hidden="true"
+                    />
                     <span>{bullet}</span>
                   </li>
                 ))}
               </ul>
-              <div className="mt-8 pt-2">
+              <div className="mt-auto pt-8">
                 <ButtonLink href="#contact" variant="outline" className="w-full">
                   Talk About {service.title}
                 </ButtonLink>
               </div>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-slate-200 bg-white p-5 shadow-sm sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+          <div>
+            <p className="text-lg font-black text-slate-950">
+              Not sure which service fits?
+            </p>
+            <p className="mt-2 leading-7 text-slate-600">
+              Start with a free review and get a simple recommendation.
+            </p>
+          </div>
+          <ButtonLink href="#contact" className="mt-5 w-full sm:mt-0 sm:w-auto">
+            Get a Free Website Review
+          </ButtonLink>
         </div>
       </div>
     </section>

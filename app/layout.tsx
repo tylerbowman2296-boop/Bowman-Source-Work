@@ -15,9 +15,10 @@ const geistMono = Geist_Mono({
 const title = "Bowman's Source Work | Website Design & Care in Anderson, SC";
 const description =
   "Bowman's Source Work helps Anderson-area small businesses build clean, mobile-friendly websites and keep them updated with reliable website care.";
+const siteUrl = "https://bowmans-source-work.vercel.app";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bowmansourcework.com"),
+  metadataBase: new URL(siteUrl),
   title,
   description,
   keywords: [
@@ -39,15 +40,15 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    url: "https://bowmansourcework.com",
+    url: siteUrl,
     siteName: "Bowman's Source Work",
     locale: "en_US",
     type: "website",
     images: [
       {
         url: "/bowmans-source-work-logo.png",
-        width: 1090,
-        height: 389,
+        width: 260,
+        height: 92,
         alt: "Bowman's Source Work logo",
       },
     ],

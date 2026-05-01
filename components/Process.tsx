@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/ui/Button";
 import { processSteps } from "@/lib/constants";
 
 export default function Process() {
@@ -40,6 +41,21 @@ export default function Process() {
               <p className="mt-3 leading-7 text-slate-600">{step.text}</p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-cyan-100 bg-cyan-50 p-5 sm:flex sm:items-center sm:justify-between sm:gap-6 sm:p-6">
+          <div>
+            <p className="text-lg font-black text-slate-950">
+              Ready for step one?
+            </p>
+            <p className="mt-2 leading-7 text-slate-700">
+              Send your website or business idea and I&apos;ll help you sort out
+              the next move.
+            </p>
+          </div>
+          <ButtonLink href="#contact" className="mt-5 w-full sm:mt-0 sm:w-auto">
+            Start With a Free Review
+          </ButtonLink>
         </div>
       </div>
     </section>

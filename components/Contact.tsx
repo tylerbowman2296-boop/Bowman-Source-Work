@@ -1,8 +1,8 @@
 "use client";
 
-import { businessInfo, contactNeeds } from "@/lib/constants";
-import { Button } from "@/components/ui/Button";
 import { useMemo, useState, type FormEvent } from "react";
+import { Button } from "@/components/ui/Button";
+import { businessInfo, contactNeeds } from "@/lib/constants";
 
 export default function Contact() {
   const [hasSubmitted, setHasSubmitted] = useState(false);
@@ -52,8 +52,8 @@ export default function Contact() {
             Ready to Make Your Business Look Better Online?
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-300">
-            Tell me about your business and I&apos;ll help you figure out the most
-            practical next step.
+            Tell me about your business and I&apos;ll help you figure out the
+            most practical next step.
           </p>
 
           <div className="mt-8 space-y-4 rounded-3xl border border-white/10 bg-white/[0.07] p-6">
@@ -61,7 +61,7 @@ export default function Contact() {
               <p className="text-sm font-bold text-cyan-200">Email</p>
               <a
                 href={`mailto:${businessInfo.email}`}
-                className="mt-1 inline-block break-all text-lg font-semibold text-white underline decoration-cyan-300/50 underline-offset-4 transition hover:text-cyan-200"
+                className="mt-1 inline-block break-all text-base font-semibold text-white underline decoration-cyan-300/50 underline-offset-4 transition hover:text-cyan-200 sm:text-lg"
               >
                 {businessInfo.email}
               </a>
@@ -91,6 +91,13 @@ export default function Contact() {
           className="rounded-3xl bg-white p-5 text-slate-950 shadow-2xl shadow-black/30 sm:p-7"
         >
           {/* Connect this form to Formspree, Resend, or a Next route handler when a real email service is ready. */}
+          <div className="mb-6 rounded-2xl border border-cyan-100 bg-cyan-50 p-4">
+            <p className="text-sm font-bold leading-6 text-slate-800">
+              No pressure &mdash; just tell me what you need help with and
+              I&apos;ll suggest the best next step.
+            </p>
+          </div>
+
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="text-sm font-bold text-slate-800">
@@ -154,10 +161,7 @@ export default function Contact() {
           </div>
 
           <div className="mt-5">
-            <label
-              htmlFor="need"
-              className="text-sm font-bold text-slate-800"
-            >
+            <label htmlFor="need" className="text-sm font-bold text-slate-800">
               What do you need help with?
             </label>
             <select

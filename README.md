@@ -31,16 +31,16 @@ Main sections are in `components/`. The homepage layout is in `app/page.tsx`.
 
 ## Edit Assets
 
-- Full logo: `public/bowmans-source-work-logo.png`
-- Header logo mark: `public/bowmans-source-work-mark.png`
+- Full logo used in the header and footer: `public/bowmans-source-work-logo.png`
+- Brand mark used in preview visuals and icons: `public/bowmans-source-work-mark.png`
 - Founder photo: `public/tyler-bowman.jpeg`
 - Site icons: `app/icon.png` and `app/apple-icon.png`
 
 ## Contact Form
 
-The form in `components/Contact.tsx` currently uses a `mailto:` fallback to `tylerdrake@bowmansourcework.com`, so it works without a backend.
+The form in `components/Contact.tsx` currently opens a prepared email to `contact@bowmansourcework.com`, so it works without a backend.
 
-To use a real form service later, replace the form `action` with a Formspree endpoint, a Resend-powered Next.js route handler, or another Vercel-compatible form handler.
+To use a real form service later, connect the submit handler to Formspree, a Resend-powered Next.js route handler, or another Vercel-compatible form handler.
 
 ## Deploy To Vercel
 
@@ -51,4 +51,4 @@ To use a real form service later, replace the form `action` with a Formspree end
 5. Use the default build command: `npm run build`.
 6. Deploy.
 
-The production domain is currently set in `app/layout.tsx` as `https://bowmansourcework.com`. Update `metadataBase`, Open Graph URLs, and any domain text if the final domain changes.
+The production metadata is currently set in `app/layout.tsx` as `https://bowmans-source-work.vercel.app`. Update `metadataBase`, Open Graph URLs, and any domain text after the custom domain is connected to this project.

@@ -1,4 +1,5 @@
 ﻿import Image from "next/image";
+import { ButtonLink } from "@/components/ui/Button";
 import { businessInfo } from "@/lib/constants";
 
 export default function About() {
@@ -76,6 +77,12 @@ export default function About() {
                 </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-8">
+            <ButtonLink href="#contact" className="w-full sm:w-auto">
+              Talk With Tyler
+            </ButtonLink>
           </div>
         </div>
       </div>

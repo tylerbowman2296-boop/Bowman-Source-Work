@@ -1,3 +1,4 @@
+import { ButtonLink } from "@/components/ui/Button";
 import { faqs } from "@/lib/constants";
 
 export default function FAQ() {
@@ -34,6 +35,18 @@ export default function FAQ() {
               <p className="mt-4 leading-7 text-slate-600">{faq.answer}</p>
             </details>
           ))}
+        </div>
+
+        <div className="mt-10 rounded-3xl border border-slate-200 bg-slate-50 p-5 text-center sm:p-6">
+          <p className="text-lg font-black text-slate-950">
+            Still have a question?
+          </p>
+          <p className="mt-2 leading-7 text-slate-600">
+            Send a quick message and I&apos;ll keep the answer clear.
+          </p>
+          <ButtonLink href="#contact" className="mt-5 w-full sm:w-auto">
+            Ask a Question
+          </ButtonLink>
         </div>
       </div>
     </section>
