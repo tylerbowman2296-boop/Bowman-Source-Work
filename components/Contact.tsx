@@ -1,8 +1,38 @@
-﻿import { businessInfo, contactNeeds } from "@/lib/constants";
+"use client";
+
+import { businessInfo, contactNeeds } from "@/lib/constants";
 import { Button } from "@/components/ui/Button";
+import { useMemo, useState, type FormEvent } from "react";
 
 export default function Contact() {
-  const mailtoAction = `mailto:${businessInfo.email}?subject=Free%20Website%20Review%20Request`;
+  const [hasSubmitted, setHasSubmitted] = useState(false);
+  const subject = "Free Website Review Request";
+  const directMailLink = useMemo(
+    () => `mailto:${businessInfo.email}?subject=${encodeURIComponent(subject)}`,
+    [subject],
+  );
+
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const formData = new FormData(event.currentTarget);
+    const lines = [
+      `Name: ${formData.get("Name") || ""}`,
+      `Business name: ${formData.get("Business name") || ""}`,
+      `Email: ${formData.get("Email") || ""}`,
+      `Phone number: ${formData.get("Phone number") || ""}`,
+      `Need help with: ${formData.get("Need help with") || ""}`,
+      "",
+      `Message: ${formData.get("Message") || ""}`,
+    ];
+
+    const mailtoUrl = `mailto:${businessInfo.email}?subject=${encodeURIComponent(
+      subject,
+    )}&body=${encodeURIComponent(lines.join("\n"))}`;
+
+    setHasSubmitted(true);
+    window.location.href = mailtoUrl;
+  }
 
   return (
     <section
@@ -55,13 +85,12 @@ export default function Contact() {
         </div>
 
         <form
-          action={mailtoAction}
-          method="post"
-          encType="text/plain"
           aria-describedby="contact-form-note"
+          method="post"
+          onSubmit={handleSubmit}
           className="rounded-3xl bg-white p-5 text-slate-950 shadow-2xl shadow-black/30 sm:p-7"
         >
-          {/* Replace the mailto action above with a Formspree, Resend, or Next route handler when a real email service is ready. */}
+          {/* Connect this form to Formspree, Resend, or a Next route handler when a real email service is ready. */}
           <div className="grid gap-5 sm:grid-cols-2">
             <div>
               <label htmlFor="name" className="text-sm font-bold text-slate-800">
@@ -169,12 +198,28 @@ export default function Contact() {
           <Button type="submit" className="mt-6 w-full" size="lg">
             Get a Free Website Review
           </Button>
+          {hasSubmitted ? (
+            <div
+              role="status"
+              className="mt-4 rounded-2xl border border-cyan-200 bg-cyan-50 px-4 py-3 text-sm leading-6 text-slate-700"
+            >
+              Your email app should open with the message filled in. If it does
+              not, email{" "}
+              <a
+                href={directMailLink}
+                className="font-bold text-cyan-800 underline decoration-cyan-400 underline-offset-4"
+              >
+                {businessInfo.email}
+              </a>{" "}
+              or call {businessInfo.phone}.
+            </div>
+          ) : null}
           <p
             id="contact-form-note"
             className="mt-4 text-center text-sm leading-6 text-slate-500"
           >
-            You can also email or call directly if that is easier. I will keep
-            the next step simple and clear.
+            This opens your email app with your details filled in. You can also
+            email or call directly if that is easier.
           </p>
         </form>
       </div>
